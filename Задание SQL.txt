@@ -1,0 +1,80 @@
+CREATE table manufactutrer(id integer auto_increment primary key, name_manufactutrer varchar(30) NOT NULL, pname1 varchar(30) NOT NULL, pname2 varchar(30) NOT NULL, pname3 varchar(30) NOT NULL,  site varchar(30), phone_number varchar(30));
+
+
+
+CREATE table products(id integer auto_increment primary key, pname varchar(30) NOT NULL, manufactutrerId INT, count integer DEFAULT 0, price DECIMAL(15, 2), FOREIGN KEY (manufactutrerId) REFERENCES manufactutrer (Id));
+
+
+CREATE table manufactutrer(id integer auto_increment primary key, name_manufactutrer varchar(30) NOT NULL, pname1 varchar(30) NOT NULL, pname2 varchar(30) NOT NULL, pname3 varchar(30) NOT NULL,  site varchar(30), phone_number varchar(30));
+
+
+
+CREATE table products(id integer auto_increment primary key, pname varchar(30) NOT NULL, manufactutrerId INT, count integer DEFAULT 0, price DECIMAL(15, 2), FOREIGN KEY (manufactutrerId) REFERENCES manufactutrer (Id));
+
+INSERT INTO manufactutrer (name_manufactutrer, pname1, pname2, pname3, site, phone_number) VALUES ('petrobych', 'kolbasa', 'syr', 'maslo', 'www.petrobych.ru', '+79045254562');
+
+INSERT INTO manufactutrer (name_manufactutrer, pname1, pname2, pname3, site, phone_number) VALUES ('magnit', 'kolbasa', 'syr', 'maslo', 'www.magnit.ru', '+79077454541');
+
+INSERT INTO manufactutrer (name_manufactutrer, pname1, pname2, pname3, site, phone_number) VALUES ('sibkolbasy', 'kolbasa', 'syr', 'maslo', 'www.sibkolbasy.ru', '+79087254578');
+
+INSERT INTO manufactutrer (name_manufactutrer, pname1, pname2, pname3, site, phone_number) VALUES ('mysnoy dvor', 'kolbasa', 'syr', 'maslo', 'www.mysnoy dvor.ru', '+79057484552');
+
+INSERT INTO manufactutrer (name_manufactutrer, pname1, pname2, pname3, site, phone_number) VALUES ('import', 'kolbasa', 'syr', 'maslo', 'www.import.ru', '+79087124598');
+
+INSERT INTO manufactutrer (name_manufactutrer, pname1, pname2, pname3, site, phone_number) VALUES ('kfc', 'kolbasa', 'syr', 'maslo', 'www.kfc.ru', '+79137178594');
+
+
+CREATE table products(id integer auto_increment primary key, pname varchar(30) NOT NULL, manufactutrerId INT, count integer DEFAULT 0, price DECIMAL(15, 2), FOREIGN KEY (manufactutrerId) REFERENCES manufactutrer (Id));
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('kolbasa', 3, 25, 325.60);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('kolbasa', 5, 45, 225.10);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('kolbasa', 1, 35, 250.40);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('kolbasa', 7, 15, 550.50);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('kolbasa', 2, 75, 150.70);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('kolbasa', 6, 65, 250.20);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('kolbasa', 4, 35, 270.40);
+
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('syr', 5, 25, 470.40);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('syr', 1, 15, 770.00);
+
+INSERT INTO products(pname, manufactutrerId, price) VALUES ('syr', 3, 770.00);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('syr', 6, 55, 370.00);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('syr', 2, 45, 410.00);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('syr', 4, 5, 750.00);
+
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('maslo', 2, 15, 450.00);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('maslo', 7, 25, 370.00);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('maslo', 1, 12, 680.00);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('maslo', 3, 24, 550.00);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('maslo', 5, 34, 540.00);
+
+INSERT INTO products(pname, manufactutrerId, price) VALUES ('maslo', 2, 990.00);
+
+INSERT INTO products(pname, manufactutrerId, count, price) VALUES ('maslo', 4, 22, 560.00);
+
+DELETE FROM products SET manufactutrerId=4;
+
+
+CREATE TABLE manufactutrer(Id INT PRIMARY KEY AUTO_INCREMENT, manuf_name VARCHAR(20), productsId INT, FOREIGN KEY (productsId) REFERENCES products (Id));
+
+
+CREATE table manufactutrer(id integer auto_increment primary key, name_manufactutrer varchar(30) NOT NULL, pname1 varchar(30) NOT NULL, pname2 varchar(30) NOT NULL, pname3 varchar(30) NOT NULL,  site varchar(30), phone_number varchar(30));
+
+
+ALTER TABLE manufactutrer DROP COLUMN pname1;
